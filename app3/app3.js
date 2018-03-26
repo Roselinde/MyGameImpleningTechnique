@@ -19,6 +19,26 @@ connection.connect(function (err) {
 
 });
 
+app.get('/user/add/user', function (req, res) {
+    
+    var name = req.query.name;
+    var password = req.query.pass;
+
+    var user = [[name,password]];
+
+    /*
+   var user = [
+        ['Aa','456789'],
+        ['Bb','456789'],
+        ['Cc','456789']
+   ];
+   */
+
+    InsertUser(user,function(err,result){
+        res.end(result)
+    }); 
+});
+
 
 
 app.get('/users', function (req, res) {
@@ -69,5 +89,24 @@ function queryUser(callback) {
             json = JSON.stringify(rows);
 
             callback(null, json);
+        });
+}
+
+function InsertUser(user,callback) {
+
+    var sql = 'INSERT INTO user(name,password) values ?';
+
+    connection.query(sql,[user],
+        function (err) {
+
+            var result = '[{"success":"true"}]'
+
+            if (err){
+                result = '[{"success":"false"}]'
+                throw err;
+
+            }
+
+            callback(null, result);
         });
 }
