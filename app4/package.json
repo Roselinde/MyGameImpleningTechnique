@@ -1,0 +1,11 @@
+{
+  "name": "ls",
+  "version": "1.0.0",
+  "description": "app4",
+  "main": "app4.js",
+  "author": "supanat",
+  "license": "MIT",
+  "dependencies": {
+    "mysql": "^2.15.0"
+  }
+}
