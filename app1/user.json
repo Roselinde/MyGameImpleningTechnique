@@ -16,11 +16,5 @@
        "password" : "password3",
        "profession" : "clerk",
        "id": 3
-    },
-    "user4" : {
-       "name" : "sumeth",
-       "password" : "password3",
-       "profession" : "clerk",
-       "id": 4
     }
  }
