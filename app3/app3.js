@@ -41,7 +41,7 @@ app.get('/user/add/user', function (req, res) {
 
 
 
-app.get('/users', function (req, res) {
+app.get('/alluser', function (req, res) {
     //res.end('hello');
 
     queryAllUser(function(err,result){
